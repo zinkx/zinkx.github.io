@@ -4,7 +4,7 @@ $f(X) = W_1X + b_1$\
 $g(X) = W_2X + b_2$\
 $g(f(X)) = \underbrace{W_2W_1}_{W_3}X + \underbrace{W_2b_1 + b_2}_{b_3}$\
 If we'd try to aproximate a quadratic function using only a linear layer, we'd end up with the training process looking something like this:
-![](linonelayer.gif)
+![](lin_single.gif)
 The direction of the gradient  jumps between the left and right tails of the quadratic function, without the network being able to settle for a suitable approximation.
 Still, we like linear functions, they have a predictible gradient and are differentiable in all points. If you take a higher order polynomial for example, they tend to have dramatic tails when extrapolating data (imagine the behaviour of $x^2$ for values aproaching infinity).
   So this is where activation functions come into play: they allow the model to go beyond linearity by wrapping the linear functions in each layer with some non linear transformation.\
