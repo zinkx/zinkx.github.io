@@ -27,7 +27,7 @@ def animate(i):
         
     return line,
 
-filename = 'lin_single.gif'
+filename = '../images/relu_net_20neurons_out.gif'
 # setting
 function = lambda x : x*x
 value_low = -5
@@ -36,7 +36,7 @@ x = np.linspace(-5,5, 1000)
 batchsize = 256
 
 #setup your network
-network = torch.nn.Sequential(torch.nn.Linear(1,1)) 
+network = torch.nn.Sequential(torch.nn.Linear(1,20),torch.nn.ReLU(),torch.nn.Linear(20,1)) 
 optimizer = torch.optim.SGD(network.parameters(), lr = 0.01)
 loss = torch.nn.MSELoss()
 
@@ -44,7 +44,7 @@ loss = torch.nn.MSELoss()
 x_torch = torch.tensor(x.reshape(-1,1), dtype=torch.float32)
 
 #create plot
-fig, axs = plt.subplots(1, figsize=(10,10))
+fig, axs = plt.subplots(1, figsize=(7,5))
 #plot true function
 axs.plot(x, function(x), linestyle="dashed")
 
@@ -55,7 +55,7 @@ line, = axs.plot(x,y)
 #run animation
 ani = animation.FuncAnimation(fig, animate, repeat=False, frames = 100,
                                         interval=10, blit=True, save_count=3)
-
+plt.tight_layout()
 #save to gif
 writergif = animation.PillowWriter(fps=30)
 ani.save(filename,writer=writergif)
