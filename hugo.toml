@@ -4,8 +4,8 @@ title = 'Blog vom Lott'
 theme = 'archie'
 
 [params]
-#katex = true
 mathjax = true
+customcss = ["custom.css"]
 
 [[params.social]]
 name = "GitHub"
