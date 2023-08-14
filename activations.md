@@ -52,7 +52,6 @@ $l_2(x) = \mathbf{w}_2x+b_2$ with $\mathbf{w}^T_2 \in \mathbb{R}^2$, $b_2 \in \m
 Looks much better, right?\
 If we look at the layers in detail, we can observe that the first Linear layer aproximates the left and right tail of the quadratic function, the ReLU removes the unnecessary values and finally, our last layer combines the two by simply adding together the two outputs of the previous layer. Not even that complicated, right?\
 And this is how you can utilize linear layers and ReLUs to approximate complicated funtions, by allowing each neuron to focus on a just single section. We can of course add more neurons and more layers to get even crisper results. For our quadratic function, if we pump the number of neurons in the first layer up to 20, we'd end up with the final approximation looking something like this:\
-![](output_relu_multineuron.gif)
-I hope this gives you somewhat of an intuition on how ReLU networks work, if you're interested in playing around with this setup yourself, take a look at my notebook ReLU_nets_visualized.ipynb.
-
+![](relu_net_20neurons_out.gif)
+This concludes our little tutorial, I hope you now have somewhat of an intuition on how ReLU networks work, if you're interested in playing around with this setup yourself, take a look at my notebook ReLU_nets_visualized.ipynb.
  
