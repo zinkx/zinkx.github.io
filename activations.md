@@ -4,7 +4,7 @@ $f(X) = W_1X + b_1$\
 $g(X) = W_2X + b_2$\
 $g(f(X)) = \underbrace{W_2W_1}_{W_3}X + \underbrace{W_2b_1 + b_2}_{b_3}$\
 If we'd try to aproximate a quadratic function using only a linear layer, we'd end up with the training process looking something like this:
-![](lin_single.gif)
+![](animations/lin_single.gif)
 The direction of the gradient  jumps between the left and right tails of the quadratic function, without the network being able to settle for a suitable approximation.
 Still, we like linear functions, they have a predictible gradient and are differentiable in all points. If you take a higher order polynomial for example, they tend to have dramatic tails when extrapolating data (imagine the behaviour of $x^2$ for values aproaching infinity).
   So this is where activation functions come into play: they allow the model to go beyond linearity by wrapping the linear functions in each layer with some non linear transformation.\
@@ -16,19 +16,19 @@ In this section we're going to go over some of the most commonly used activation
 
 ### **Sigmoid**
 $f(x) = \frac{1}{1+e^{-x}}$
-![sigmoid sketch](sigmoid.png "sigmoid")
+![sigmoid sketch](sigmoid.png "plots/sigmoid")
 The sigmoid maps to values between 0 and 1, which makes it a handy tool for predicting probabilities. As such, it is a popular pick when solving binary output classification problems and is usually used as the activation function before computing the binary cross entropy loss. A downside of the sigmoid is the so called vanishing gradient problem, which describes the small value range for which the function produces a notable gradient, localized around zero. 
 ### **tanh**
 $f(x) = tanh(x)$
-![tanh sketch](tanh.png "tanh")
+![tanh sketch](tanh.png "plots/tanh")
 The tanh maps to values between -1 and 1, it is very similar to the sigmoid function but with the advantage of a higher gradient around 0. Nevertheless, it still poses no solution to the vanishing gradient problem.
 ### **ReLU**
 $f(x) = max(0,x)$
-![ReLU sketch](ReLU.png "ReLU")
+![ReLU sketch](ReLU.png "plots/ReLU")
 The  Rectified Linear Unit maps values smaller then 0 to 0 and positive numbers stay the same. This allows for a much larger range of values for which the network receives a gradient, as the derivative is either 0 for values smaller or equal to 0, or 1. In comparison to the sigmoid or tanh, the magnitude of the gradient stays the same across all positive valued inputs.  
 ### **leaky ReLU**
 $f(x;\alpha) = max(\alpha x,x)$
-![leaky ReLU sketch](leaky_ReLU.png "leaky ReLU")
+![leaky ReLU sketch](leaky_ReLU.png "plots/leaky ReLU")
 There are many derivations of the classical ReLU, with the leaky ReLU allowing for gradients for values below 0. This prevents dying neurons which can occur with classical ReLUs if all input values are below zero, so the neuron will never reveive any gradient.
 ## Why we use ReLUs
 Now that we have introduced some of the most popular activation functions, as well as established the downsides of tanh and sigmoid, it's time to give some intuition on how ReLUs work. After all, it seems nice that we get a gradient and all, but *how* exactly do we approximate a function simply by setting all values smaller than zero to zero? The ReLU afterall doesn't look that far from the Linear function, right?
@@ -48,10 +48,10 @@ Clearly, the added ReLU is an improvement to a single linear function, neverthel
 $l_1(x) = max(0,\mathbf{w}_1x+b_1)$ with $\mathbf{w}_1$, $b_1 \in \mathbb{R}^2$\
 Finally, we need to combine the information of both neurons in single neuron:\
 $l_2(x) = \mathbf{w}_2x+b_2$ with $\mathbf{w}^T_2 \in \mathbb{R}^2$, $b_2 \in \mathbb{R}$\
-![](quadratic_1lin2_relu_2lin1.gif)
+![](animations/quadratic_1lin2_relu_2lin1.gif)
 Looks much better, right?\
 If we look at the layers in detail, we can observe that the first Linear layer aproximates the left and right tail of the quadratic function, the ReLU removes the unnecessary values and finally, our last layer combines the two by simply adding together the two outputs of the previous layer. Not even that complicated, right?\
 And this is how you can utilize linear layers and ReLUs to approximate complicated funtions, by allowing each neuron to focus on a just single section. We can of course add more neurons and more layers to get even crisper results. For our quadratic function, if we pump the number of neurons in the first layer up to 20, we'd end up with the final approximation looking something like this:\
-![](relu_net_20neurons_out.gif)
+![](animations/relu_net_20neurons_out.gif)
 This concludes our little tutorial, I hope you now have somewhat of an intuition on how ReLU networks work, if you're interested in playing around with this setup yourself, take a look at my notebook ReLU_nets_visualized.ipynb.
  
