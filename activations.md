@@ -1,5 +1,7 @@
 # An illustrated guide to ReLUs
-A neural network is essentially a stack of functions that try to approximate an unknown goal function by adapting the weights in each layer. If you add more layers, you add more complexity and hence give the network the ability to learn more complex functions. Nevertheless, if you only stack linear functions on top of each other, the resulting function remains well, linear.\
+**Foreword**: this is a beginners guide to activation functions that aims to provide some intuition beyond mathematical formulas. Nevertheless, I think people of all levels of expertise will find it useful, or at the very least satisfying. The idea was born from a notebook my friend and I hacked together one evening, when we were asking ourself the question, but *why* do ReLUs work?
+## Beyond linearity
+A neural network is essentially a stack of functions that try to approximate an unknown goal function by adapting the weights in each layer. If you add more layers, you add more complexity and hence give the network the ability to learn more complex functions. Nevertheless, if you only stack linear functions on top of each other, the resulting function remains, well, linear.\
 $f(X) = W_1X + b_1$\
 $g(X) = W_2X + b_2$\
 $g(f(X)) = \underbrace{W_2W_1}_{W_3}X + \underbrace{W_2b_1 + b_2}_{b_3}$\
@@ -53,5 +55,5 @@ Looks much better, right?\
 The first linear layer approximates the left and right tail of the quadratic function, the ReLU cuts the unnecessary values and finally, our last layer combines the two by simply adding them together.\
 And this is how you can utilize linear layers and ReLUs to approximate complicated funtions, by allowing each neuron to focus on a just single section. We can of course add more neurons and more layers to get even crisper results. For our quadratic function, if we pump the number of neurons in the first layer up to 20, we'd end up with the final approximation looking something like this:\
 ![](animations/relu_net_20neurons_out.gif)\
-This concludes our little tutorial, I hope you now have more of an intuition on how ReLU networks work. If you're interested in playing around with this setup yourself, take a look at my notebook ReLU_nets_visualized.ipynb.
+This concludes our little tutorial, I hope it provided some intuition on how ReLUs work. If you're interested in playing around with this setup yourself, take a look at ReLU_nets_visualized.ipynb.
  
