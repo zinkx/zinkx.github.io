@@ -3,6 +3,10 @@ languageCode = 'en-us'
 title = 'Blog vom Lott'
 theme = 'archie'
 
+[params]
+#katex = true
+mathjax = true
+
 [[params.social]]
 name = "GitHub"
 icon = "github"
