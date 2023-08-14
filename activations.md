@@ -42,7 +42,7 @@ $max(0,Wx+b)$\
 If we start with a single Linear Layer with ReLU activation\
 $l_1(x) = max(0,wx+b)$ with $w,b \in \mathbb{R} $\
  and visualize the training process, we can see the following behaviour: \
-![](quadratic_1lin1_relu.gif)\
+![](animations/quadratic_1lin1_relu.gif)\
 Clearly, the added ReLU is an improvement to a single linear function, nevertheless the network only manages to give a broad approximation for positive input values. This is not surprising, given that the ReLU only returns the positive values and sets everything else to 0. Overlooking the bias, the network can either handle all positive values, or all negative values (with $w_1<0$), but it cannot learn how to deal with both. So in order to give it the oppurtunity to deal with negative values as well as positive ones, we need another neuron:
 :\
 $l_1(x) = max(0,\mathbf{w}_1x+b_1)$ with $\mathbf{w}_1$, $b_1 \in \mathbb{R}^2$\
@@ -53,5 +53,5 @@ Looks much better, right?\
 The first linear layer approximates the left and right tail of the quadratic function, the ReLU cuts the unnecessary values and finally, our last layer combines the two by simply adding them together.\
 And this is how you can utilize linear layers and ReLUs to approximate complicated funtions, by allowing each neuron to focus on a just single section. We can of course add more neurons and more layers to get even crisper results. For our quadratic function, if we pump the number of neurons in the first layer up to 20, we'd end up with the final approximation looking something like this:\
 ![](animations/relu_net_20neurons_out.gif)\
-This concludes our little tutorial, I hope you now have somewhat of an intuition on how ReLU networks work. If you're interested in playing around with this setup yourself, take a look at my notebook ReLU_nets_visualized.ipynb.
+This concludes our little tutorial, I hope you now have more of an intuition on how ReLU networks work. If you're interested in playing around with this setup yourself, take a look at my notebook ReLU_nets_visualized.ipynb.
  
