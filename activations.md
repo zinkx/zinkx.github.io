@@ -16,19 +16,19 @@ In this section we're going to go over some of the most commonly used activation
 
 ### **Sigmoid**
 $f(x) = \frac{1}{1+e^{-x}}$
-![sigmoid sketch](sigmoid.png "plots/sigmoid")\
+![sigmoid sketch](plots/sigmoid.png "sigmoid")\
 The sigmoid maps to values between 0 and 1, which makes it a handy tool for predicting probabilities. As such, it is a popular pick when solving binary output classification problems and is usually used as the activation function before computing the binary cross entropy loss. A downside of the sigmoid is the so called vanishing gradient problem, which describes the small value range for which the function produces a notable gradient, localized around zero. 
 ### **tanh**
 $f(x) = tanh(x)$
-![tanh sketch](tanh.png "plots/tanh")\
+![tanh sketch](plots/tanh.png "tanh")\
 The tanh maps to values between -1 and 1, it is very similar to the sigmoid function but with the advantage of a higher gradient around 0. Nevertheless, it still poses no solution to the vanishing gradient problem.
 ### **ReLU**
 $f(x) = max(0,x)$
-![ReLU sketch](ReLU.png "plots/ReLU")\
+![ReLU sketch](plots/ReLU.png "ReLU")\
 The  Rectified Linear Unit maps values smaller then 0 to 0 and positive numbers stay the same. This allows for a much larger range of values for which the network receives a gradient, as the derivative is either 0 for values smaller or equal to 0, or 1. In comparison to the sigmoid or tanh, the magnitude of the gradient stays the same across all positive valued inputs.  
 ### **leaky ReLU**
 $f(x;\alpha) = max(\alpha x,x)$
-![leaky ReLU sketch](leaky_ReLU.png "plots/leaky ReLU")\
+![leaky ReLU sketch](plots/leaky_ReLU.png "leaky ReLU")\
 There are many derivations of the classical ReLU, with the leaky ReLU allowing for gradients for values below 0. This prevents dying neurons which can occur with classical ReLUs if all input values are below zero, so the neuron will never reveive any gradient.
 ## Why we use ReLUs
 Now that we have introduced some of the most popular activation functions, as well as established the downsides of tanh and sigmoid, it's time to give some intuition on how ReLUs work. After all, it seems nice that we get a gradient and all, but *how* exactly do we approximate a function simply by setting all values smaller than zero to zero? The ReLU afterall doesn't look that far from the Linear function, right?
