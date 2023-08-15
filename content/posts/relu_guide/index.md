@@ -6,7 +6,7 @@ tags: [relu, deeplearning, visuallearner,neuralnetworks,beginner]
 draft: false
 ---
 **Foreword**: this is a beginners guide to activation functions that aims to provide some intuition beyond mathematical formulas. Nevertheless, I think people of all levels of expertise will find it useful, or at the very least satisfying. The idea was born from a notebook my friend and I hacked together one evening, when we were asking ourself the question, but *why* do ReLU networks work?
-## Beyond Linearity
+## Linear Limitations
 A neural network is essentially a stack of functions that try to approximate an unknown goal function by adapting the weights in each layer. If you add more layers, you add more complexity and hence give the network the ability to learn more complex functions. Nevertheless, if you only stack linear functions on top of each other, the resulting function remains, well, linear.\
 $f(X) = W_1X + b_1$\
 $g(X) = W_2X + b_2$\
@@ -54,7 +54,7 @@ $l_1(x) = max(0,wx+b)$ with $w,b \in \mathbb{R} $\
 Clearly, the added ReLU is an improvement to a single linear function, nevertheless the network only manages to give a broad approximation for positive input values. This is not surprising, given that the ReLU only returns the positive values and sets everything else to 0. Overlooking the bias, the network can either handle all positive values, or all negative values (with $w_1<0$), but it cannot learn how to deal with both. So in order to give it the oppurtunity to deal with negative values as well as positive ones, we need another neuron:
 :\
 $l_1(x) = max(0,\mathbf{w}_1x+b_1)$ with $\mathbf{w}_1$, $b_1 \in \mathbb{R}^2$\
-Finally, we need to combine the information of both neurons in single neuron:\
+Finally, we need to combine the information of both neurons in single dimension:\
 $l_2(x) = \mathbf{w}_2x+b_2$ with $\mathbf{w}^T_2 \in \mathbb{R}^2$, $b_2 \in \mathbb{R}$\
 ![](images/quadratic_1lin2_relu_2lin1.gif)\
 Looks much better, right?\
