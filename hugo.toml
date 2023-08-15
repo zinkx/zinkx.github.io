@@ -1,0 +1,33 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Blog vom Lott'
+theme = 'archie'
+
+[params]
+mathjax = true
+customcss = ["custom.css"]
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/zinkx/"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4

@@ -1,0 +1,12 @@
+/* Markdown */
+img {
+  border: 0;
+}
+/* #96c6df*/
+:root{
+  --maincolor: rgb(206, 178, 235);
+  --bordercl:#5ab2c5;
+  --callouctcolor:dodgerblue;
+  --hovercolor:navy;
+  --darkMaincolor: #50fa7b;
+  }
