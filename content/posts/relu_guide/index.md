@@ -5,7 +5,9 @@ description: "An intuitive introduction to ReLU networks."
 tags: [relu, deeplearning, visuallearner,neuralnetworks,beginner]
 draft: false
 ---
-**Foreword**: this is a beginners guide to activation functions that aims to provide some intuition beyond mathematical formulas. Nevertheless, I think people of all levels of expertise will find it useful, or at the very least satisfying. The idea was born from a notebook my friend and I hacked together one evening, when we were asking ourself the question, but *why* do ReLU networks work?
+**Foreword**: this is a beginners guide to activation functions that aims to provide some intuition beyond mathematical formulas. Nevertheless, I think people of all levels of expertise will find it useful, or at the very least satisfying. The idea was born from a notebook my friend [Sebastian](
+https://github.com/Sebastian-Griesbach
+) and I hacked together one evening, when we were asking ourself the question, but *why* do ReLU networks work?
 ## Linear Limitations
 A neural network is essentially a stack of functions that try to approximate an unknown goal function by adapting the weights in each layer. If you add more layers, you add more complexity and hence give the network the ability to learn more complex functions. Nevertheless, if you only stack linear functions on top of each other, the resulting function remains, well, linear.\
 $f(X) = W_1X + b_1$\
