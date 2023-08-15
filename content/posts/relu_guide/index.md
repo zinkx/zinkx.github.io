@@ -61,5 +61,5 @@ Looks much better, right?\
 The first linear layer approximates the left and right tail of the quadratic function, the ReLU cuts the unnecessary values and finally, our last layer combines the two by simply adding them together.\
 And this is how you can utilize linear layers and ReLUs to approximate complicated funtions, by allowing each neuron to focus on a just single section. We can of course add more neurons and more layers to get even crisper results. For our quadratic function, if we pump the number of neurons in the first layer up to 20, we'd end up with the final approximation looking something like this:\
 ![](images/relu_net_20neurons_out.gif)\
-This concludes our little tutorial, I hope it provided some intuition on how ReLUs work. If you're interested in playing around with this setup yourself, take a look at ReLU_nets_visualized.ipynb.
+This concludes our little tutorial, I hope it provided some intuition on how ReLUs work. If you're interested in playing around with this setup yourself, take a look at [ReLU_nets_visualized.ipynb](https://github.com/zinkx/zinkx.github.io/blob/master/content/posts/relu_guide/src/ReLU_nets_visualized.ipynb).
  
