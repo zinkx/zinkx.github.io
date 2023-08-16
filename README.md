@@ -1,1 +1,1 @@
-this is a blog.
+this is a blog. Please visit zinkx.github.io/
