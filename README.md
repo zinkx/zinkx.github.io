@@ -1,1 +1,1 @@
-this is a blog. Please visit zinkx.github.io/
+this is a [blog](zinkx.github.io/).
