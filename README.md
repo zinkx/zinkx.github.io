@@ -1,1 +1,1 @@
-this is a [blog](zinkx.github.io/).
+this is a [blog](https://zinkx.github.io/).
